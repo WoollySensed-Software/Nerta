@@ -14,27 +14,21 @@ class AuthUI(DatabaseModule):
     def sign_in(self):
         st.subheader(':red[Авторизация]')
 
-        login = st.text_input('Логин', max_chars=100, autocomplete='email', 
-                              placeholder='Введите почту от аккаунта', 
-                              icon=':material/mail:')
-        password = st.text_input('Пароль', max_chars=100, type='password', 
-                                 autocomplete='current-password', 
-                                 placeholder='Введите пароль от аккаунта', 
-                                 icon=':material/password:')
-        
-        # login_is_valid = self.__login_validator(login)
-        # password_is_valid = self.__password_validator(password)
+        with st.form('Form_SignIn', border=False):
+            login = st.text_input('Логин', max_chars=100, autocomplete='email', 
+                                placeholder='Введите почту от аккаунта', 
+                                icon=':material/mail:')
+            password = st.text_input('Пароль', max_chars=100, type='password', 
+                                    autocomplete='current-password', 
+                                    placeholder='Введите пароль от аккаунта', 
+                                    icon=':material/password:')
 
-        submit = st.button('Войти', icon=':material/account_circle:')
-        
-        if submit:
-            # if login_is_valid and password_is_valid:
+            if st.form_submit_button('Войти', icon=':material/account_circle:'):
                 if self.__sign_in_check(login.strip(), password.strip()):
                     st.success('Вы успешно авторизовались')
                     st.session_state['AuthStatus'] = True
                     st.rerun()
                 else: st.warning('Введенные данные не соответствуют данным аккаунта')
-            # else: st.warning('Что-то не так...')
 
     def sign_up(self):
         st.subheader(':red[Создание аккаунта]')
