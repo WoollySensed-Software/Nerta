@@ -22,19 +22,19 @@ class AuthUI(DatabaseModule):
                                  placeholder='Введите пароль от аккаунта', 
                                  icon=':material/password:')
         
-        login_is_valid = self.__login_validator(login)
-        password_is_valid = self.__password_validator(password)
+        # login_is_valid = self.__login_validator(login)
+        # password_is_valid = self.__password_validator(password)
 
         submit = st.button('Войти', icon=':material/account_circle:')
         
         if submit:
-            if login_is_valid and password_is_valid:
+            # if login_is_valid and password_is_valid:
                 if self.__sign_in_check(login.strip(), password.strip()):
                     st.success('Вы успешно авторизовались')
                     st.session_state['AuthStatus'] = True
                     st.rerun()
                 else: st.warning('Введенные данные не соответствуют данным аккаунта')
-            else: st.warning('Что-то не так...')
+            # else: st.warning('Что-то не так...')
 
     def sign_up(self):
         st.subheader(':red[Создание аккаунта]')
