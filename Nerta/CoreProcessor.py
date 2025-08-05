@@ -43,6 +43,9 @@ class CoreProcessor:
     def get_pages_struct(self) -> dict:
         pages = {'Главная': [st.Page(page='Nerta/UI/HomepageUI.py', 
                                      title='Главная страница', 
+                                     icon=None), 
+                             st.Page(page='Nerta/UI/EventsUI.py', 
+                                     title='События', 
                                      icon=None)], 
                  'КПЭ': [st.Page(page='Nerta/UI/KpiUI.py', 
                                  title='КПЭ', 
