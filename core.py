@@ -14,6 +14,7 @@ core.set_site_cfg('Nerta | Дашборд',
 if not st.session_state['AuthStatus']:
     auth_ui = AuthUI()
     tab_sign_in, tab_sign_up = st.tabs(['Авторизация', 'Создание аккаунта'])
+    st.set_page_config(layout='centered')
 
     with tab_sign_in:
         auth_ui.sign_in()
