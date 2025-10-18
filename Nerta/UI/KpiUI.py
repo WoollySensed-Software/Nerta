@@ -6,7 +6,7 @@ from gspread.utils import rowcol_to_a1
 from Nerta.Handlers.KpiH import KpiHandler
 
 
-title = 'КПЭ_Q3'
+title = 'КПЭ_Q4'  # Меняется при смене квартала
 kpi_h = KpiHandler(title)
 gs_data = kpi_h.get_data_safe()
 kpi_h.gs_data = gs_data

@@ -11,9 +11,9 @@ links_h = LinksHandler('Ссылки')
 links_h.gs_data = links_h.get_data_safe()
 contracts_h = ContractsHandler('Договоры')
 contracts_h.gs_data = contracts_h.get_data_safe()
-kpi_h = KpiHandler('КПЭ_Q3')
+kpi_h = KpiHandler('КПЭ_Q4')  # Меняется при смене квартала
 kpi_h.gs_data = kpi_h.get_data_safe()
-budget_h = BudgetHandler('Бюджет_Q3')
+budget_h = BudgetHandler('Бюджет_Q4')  # Меняется при смене квартала
 budget_h.gs_data = budget_h.get_data_safe()
 
 with st.sidebar.form('Form_edit_metrics'):
@@ -32,7 +32,7 @@ with st.sidebar.form('Form_edit_metrics'):
                               'homep_contracts_long': contracts_long})
 
 with st.sidebar.form('Form_update_cache'):
-    options = ('КПЭ_Q3', 'Бюджет_Q3', 'Ссылки', 'Договоры')
+    options = ('КПЭ_Q4', 'Бюджет_Q4', 'Ссылки', 'Договоры')  # Меняется при смене квартала
     option = st.selectbox('Обновить данные для', options=options, 
                           accept_new_options=True)
     

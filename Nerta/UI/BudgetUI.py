@@ -3,7 +3,7 @@ import streamlit as st
 from Nerta.Handlers.BudgetH import BudgetHandler
 
 
-title = 'Бюджет_Q3'
+title = 'Бюджет_Q4'  # Меняется при смене квартала
 budget_h = BudgetHandler(title)
 gs_data = budget_h.get_data_safe()
 budget_h.gs_data = gs_data
